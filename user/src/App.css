@@ -1,0 +1,31 @@
+/* Navbar theme matching reference UI */
+.navbar-custom {
+  background: linear-gradient(90deg, #1f2933, #2d3748);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.navbar-custom .nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-custom .btn-logout {
+  background-color: #ffffff;
+  color: #1f2933;
+  border: 1px solid #ffffff;
+  padding: 6px 14px;
+  font-weight: 500;
+}
+
+.navbar-custom .btn-logout:hover {
+  background-color: #e5e7eb;
+  color: #1f2933;
+}
+
+.navbar-custom .btn-logout:hover {
+  background-color: #bb2d3b;
+}
