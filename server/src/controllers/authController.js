@@ -46,13 +46,13 @@ exports.register = async (req, res) => {
 // LOGIN
 exports.login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { name, password } = req.body;
 
-    if (!email || !password) {
-      return res.status(400).json({ message: "Email and password are required" });
+    if (!name || !password) {
+      return res.status(400).json({ message: "name and password are required" });
     }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ name });
     if (!user) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
