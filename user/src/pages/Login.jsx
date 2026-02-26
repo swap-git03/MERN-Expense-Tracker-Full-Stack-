@@ -6,7 +6,7 @@ function Login() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    email: "",
+    name: "",
     password: ""
   });
 
@@ -43,12 +43,12 @@ function Login() {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label className="form-label">Email</label>
+            <label className="form-label">name</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
-              name="email"
-              value={form.email}
+              name="name"
+              value={form.name}
               onChange={handleChange}
               required
             />

@@ -73,7 +73,9 @@ function Reports() {
       const map = {};
       res.data.forEach(i => {
         const key = `${i._id.month}/${i._id.year}`;
-        if (!map[key]) map[key] = { month: key, income: 0, expense: 0 };
+        if (!map[key]) {
+          map[key] = { month: key, income: 0, expense: 0 };
+        }
         map[key][i._id.type] = i.total;
       });
 
@@ -145,9 +147,7 @@ function Reports() {
       <div className="row g-4 mb-5">
         <div className="col-md-6">
           <div className="card p-3 shadow-sm">
-            <h6 className="text-center mb-3">
-              Expenses by Category
-            </h6>
+            <h6 className="text-center mb-3">Expenses by Category</h6>
 
             {categoryData.length === 0 ? (
               <p className="text-center">No data</p>
@@ -207,12 +207,13 @@ function Reports() {
         </div>
 
         <div className="card-body">
-          {/* HISTORY FILTERS */}
+          {/* FILTERS */}
           <div className="row g-3 mb-3">
             <div className="col-md-3">
               <select
                 className="form-select"
                 name="type"
+                value={filters.type}
                 onChange={handleFilterChange}
               >
                 <option value="">All Types</option>
@@ -227,6 +228,7 @@ function Reports() {
                 name="category"
                 className="form-control"
                 placeholder="Category"
+                value={filters.category}
                 onChange={handleFilterChange}
               />
             </div>
@@ -236,6 +238,7 @@ function Reports() {
                 type="date"
                 name="startDate"
                 className="form-control"
+                value={filters.startDate}
                 onChange={handleFilterChange}
               />
             </div>
@@ -245,6 +248,7 @@ function Reports() {
                 type="date"
                 name="endDate"
                 className="form-control"
+                value={filters.endDate}
                 onChange={handleFilterChange}
               />
             </div>
